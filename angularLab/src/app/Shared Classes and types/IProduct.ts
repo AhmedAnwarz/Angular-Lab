@@ -12,10 +12,10 @@ iii)	Quantity – Of type number.
 iv)	Price – of type number.
 v)	Img – of type string
 */
-const enum DiscountOffers {
+enum DiscountOffers {
     A = "No Discount",
-    B = "10%",
-    C = "15%"
+    B = 100,
+    C = 150
 }
 
 export {

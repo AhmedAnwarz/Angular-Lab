@@ -17,19 +17,27 @@ export class ProductsComponent implements OnInit {
   imgStyle = {
     width:"100px"
   }
+  displayDiscount:boolean = true;
   constructor() { 
-    this.Discount = DiscountOffers.B;
-    this.storeName = "Candy Shop";
+    this.Discount = DiscountOffers.C;
+    this.storeName = "Coffee Shop";
     this.storeLogo = '../assets/800px_COLOURBOX24249284.jpg';
-    this.productList = [];
-    this.categoryList = [];
-    this.clientName = "Snoop Dog";
+    this.productList = new Array<IProduct>({ ID:1, Name:"Turkish Coffee", Quantity: 3, Price: 90, Img: "../assets/mehmet-efendi.jpg" },
+    { ID:2, Name:"Different Coffee", Quantity: 1, Price: 50, Img: "../assets/mehmet-efendi.jpg" }, { ID:3, Name:"More Coffee", Quantity: 5, Price: 20, Img: "../assets/mehmet-efendi.jpg" })
+    this.categoryList = new Array<ICategory>({ID:1, Name:"Food"}, {ID:2, Name:"Books"}, {ID:3, Name:"Fashion"});
+    this.clientName = "Client";
     this.isPurchased = false;
+    if(this.Discount.toString() != "No Discount"){
+      this.displayDiscount = true;
+    }
+    else  this.displayDiscount = false;
   }
-
+  showMessage(): void{
+    this.isPurchased = !this.isPurchased;
+  }
   ngOnInit(): void {
   }
-
+  
 }
 /*
 (1)	Property “Discount” of type DiscountOffers Enum.
