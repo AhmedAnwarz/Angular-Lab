@@ -9,6 +9,7 @@
         <option *ngFor="let item of categoryList" value="{{item.ID}}">{{item.Name}}</option>
     </select>
 </div>
+<button (click)="showData()">Display Data</button>
 <!--Using the *ngIf then ng-template (Bounse)-->
 <div *ngIf="isPurchased; then messageShow; else itemsShow"></div>
 <ng-template #itemsShow>

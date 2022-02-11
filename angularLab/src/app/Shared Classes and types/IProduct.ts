@@ -17,7 +17,6 @@ enum DiscountOffers {
     B = 100,
     C = 150
 }
-
 export {
     IProduct,
     DiscountOffers
